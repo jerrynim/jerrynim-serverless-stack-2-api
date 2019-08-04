@@ -124,6 +124,7 @@ custom:
   tableThroughput: ${self:custom.tableThroughputs.${self:custom.stage}, self:custom.tableThroughputs.default}
   # Load our secret environment variables based on the current stage.
   # Fallback to default if it is not in prod.
+
   environment: ${file(env.yml):${self:custom.stage}, file(env.yml):default}
 
 # Create our resources with separate CloudFormation templates
